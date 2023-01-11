@@ -10,7 +10,7 @@
 
 
 
-![preview]()
+![preview](./Projeto/assests/imagens/preview-2.png)
 
 > Trilha Explorer
 
