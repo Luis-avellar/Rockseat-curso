@@ -25,13 +25,15 @@ box-sizing: border-box;
 
 body {
     background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh;
 }
 body * {
     color: var(--text-color);
     font-family: 'Inter', sans-serif;
 }
 #container {
-    width: 360px;
+    width: 100%;
+    max-width: 588px;
     margin: 56px auto 0px;  
     padding: 0px 24px;
 }
@@ -65,10 +67,10 @@ body * {
     left: 0;
     transform: translateY(-50%);
     z-index: 1;
+    animation: slide-back .4s forwards;
 }
 .ligth #switch button {
-    right: 0px;
-    left: initial;
+    animation: slide-in 0.4s forwards;
 }
 #switch span {
     display: block;
@@ -131,4 +133,30 @@ footer {
     padding: 24px 0px;
     font-size: 14px;
     text-align: center;
+}
+/*media querys*/
+@media (min-width: 700px){
+    :root {
+        --bg-url: url(../imagens/bg-color-desktop.jpg);
+    }
+    .ligth {
+        --bg-url: url(../imagens/bg-color-ligth-desktop.jpg);
+    }
+}
+/*animations*/
+@keyframes slide-in {
+    from {
+        left: 0;
+    }
+    to {
+        left:50%
+    }
+}
+@keyframes slide-back {
+    from {
+        left: 50%;
+    }
+    to {
+        left: 0;
+    }
 }
